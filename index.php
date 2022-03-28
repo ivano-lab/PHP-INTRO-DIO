@@ -16,7 +16,12 @@ session_start();
 
 <form action="script.php" method="post">
     <?php 
-        $MenssagemDeErro = isset($_SESSION['Mensagem de ERRO']) ? $_SESSION['Mensagem de ERRO'] : '';
+        $MenssagemDeSucesso = isset($_SESSION['Menssagem de SUCESSO']) ? $_SESSION['Menssagem de SUCESSO'] : '';
+        if(!empty($MenssagemDeSucesso))
+        {
+            echo $MenssagemDeSucesso;
+        }
+        $MenssagemDeErro = isset($_SESSION['Menssagem de ERRO']) ? $_SESSION['Menssagem de ERRO'] : '';
         if(!empty($MenssagemDeErro))
         {
             echo $MenssagemDeErro;
